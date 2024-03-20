@@ -1,13 +1,16 @@
 const express = require('express');
+const getAll = require('../controller/allcontrollers');
+const addNew = require('../controller/allcontrollers');
+
+
+
+
 const allRoutes = express.Router();
 
 
-const {newTask,taskDelete,alltasks} = require('../controller/allcontrollers')
+allRoutes.get('/all',getAll)// route for getting all tasks 
+allRoutes.get('/new',addNew)
 
-
-allRoutes.get('/alltasks',alltasks)
-allRoutes.post('/newtask',newTask)
-allRoutes.delete('/taskDelete',taskDelete)
 
 
 

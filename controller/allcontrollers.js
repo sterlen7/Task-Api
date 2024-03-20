@@ -1,25 +1,32 @@
- let tasks =[{
-    taskname:""
-
-    
- }]
+const tasks = [
+   { id: 1, taskTitle: 'Eat' },
+   { id: 2, taskTitle: 'code' },
+   { id: 3, taskTitle: 'code' },
+ ];
  
- const alltasks = (res,req)=>{
-    res.json({
-        message:"All tasks"
-    })
+
+function getAll(req, res) {   //controller for getting all tasks 
+   res.json(tasks);
  }
 
- const taskDelete =(res,req)=>{
-    res.json({
-        message:"Task deleted"
-    })
+ function addNew(req,res){  // for adding new tasks 
+    const newTask = {
+      id: 4,
+      taskTitle: 'Send Email',
+    };
+    tasks.push(newTask);
+    res.json(tasks)
  }
 
- const newTask = (res,req)=>{
-    res.json({
-        message:"input new task"
-    })
- }
 
- module.exports ={newTask,taskDelete,alltasks}
+
+
+
+//  function delete
+
+
+
+module.exports= getAll
+module.exports= addNew
+
+

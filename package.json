@@ -2,11 +2,11 @@
   "name": "task-api-",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
    
-    "start": "node main.js",
-    "server":"nodemon main.js"
+    "start": "node server.js",
+    "server":"nodemon server.js"
   },
   "keywords": [],
   "author": "",

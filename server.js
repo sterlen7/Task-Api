@@ -1,13 +1,10 @@
 const express = require('express');
+const allRoutes = require('./routes/allRoutes');
 const app = express();
-
-
-const allRoutes = require('./routes/allRoutes')
-
 
  app.use ('/',allRoutes)
 
-const PORT = 5000
+const PORT = 1337
 
 app.get('/', (req, res, next) => {
     res.send(`Server is running.Visit http://localhost${PORT} to access`);
