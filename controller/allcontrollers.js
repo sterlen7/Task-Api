@@ -17,10 +17,10 @@ function getAll(req, res){   // for getting all tasks
 
  function getOneTask(req, res){ // for single tasks
    const taskId = parseInt(req.params.id); 
-   const task = tasks.find((task) => task.id === taskId);
+   const singleTask = tasks.find((singleTask) => singleTask.id === taskId);
  
-   if (task) {
-     res.json(task);
+   if (singleTask) {
+     res.json(singleTask);
    } else {
      res.status(404).json({ message: "Task not found" }); 
    }
@@ -30,16 +30,14 @@ function getAll(req, res){   // for getting all tasks
 
 function deleteTask(req, res){// to delete task
    const taskId = parseInt(req.params.id); 
-    const taskToDelete = tasks.find((task)=> task.id === taskId);
+    const taskToDelete = tasks.find((taskToDelete)=> taskToDelete.id === taskId);
     
     if (taskToDelete !== -1) {
       tasks.splice(taskToDelete, 1);
-      res.json('Task deleted'); 
-      
+      res.json('Task deleted');  
    }else{
       res.status(404).send("Task not found"); 
    }
-  
 }
 
 
